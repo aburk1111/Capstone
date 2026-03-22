@@ -10,4 +10,6 @@ generations.csv was generated using ChatGPT and converted to a csv format
 
 lifeExpectancy.csv was generated using ChatGPT
 
-VM steps -> Powershell script to pull data sources from GitHub -> SSIS then uses Execute Process Task to run the Powershell and put the exported data in the SQL Integration 
+REMOVED -VM steps -> Powershell script to pull data sources from GitHub -> SSIS then uses Execute Process Task to run the Powershell and put the exported data in the SQL Integration 
+Due to the VM being difficult I moved the ETL steps to Python. Now the Python script reads the csv files from GitHub, runs transformation steps, then drops them in a dedicated 
+C drive location. That location is then used to bring in the csv to Power BI.
